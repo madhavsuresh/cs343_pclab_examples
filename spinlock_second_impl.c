@@ -37,8 +37,7 @@ int main() {
 
 void *data_access(void *ptr) {
   int value = *(int*)ptr;
-  //while (!__sync_bool_compare_and_swap(&spin_lock,0,1)){}
-  //while (spin_lock == 1) {} 
+  while (!__sync_bool_compare_and_swap(&spin_lock,0,1)){}
   shared_value += value;
   __sync_bool_compare_and_swap(&spin_lock,1,0);
   pthread_exit(NULL);
