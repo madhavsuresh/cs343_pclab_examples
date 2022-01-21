@@ -3,9 +3,12 @@
 
 - This code base includes examples of a spinlock and ticketlock used in discussion section for CS343. 
 - Example taken from https://www.classes.cs.uchicago.edu/archive/2014/spring/12300-1/labs/lab4/
+- /discussion_1_21_22.md includes notes from discussion session
 
 
-## Files
+
+
+## Code
 1. read_only.c
    - demonstrates read only, multithreaded workload
 2. read_write.c
@@ -14,6 +17,8 @@
   - attempt to implement spinlock. It should fail. Lock is accessed without atomics
 4. spinlock_second_impl.c
   - correct implementation of spinlock. Utilizes atomic instructions to acquire lock. 
+5. ticket_impl.c
+  - implementation which uses ticket spinlock instead of spinlock
 
 ## How to run
 - Each file has a \*.sh file which will compile, and run the code 1000 times. This allows us to catch failures and non-deterministic behavior. 
